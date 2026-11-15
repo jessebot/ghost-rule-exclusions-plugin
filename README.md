@@ -6,50 +6,6 @@ This is a first attempt at creating an exclusions plugin for Ghost using the tem
 
 The CRS plugin documentation can be found on the [website](https://coreruleset.org/docs/configuring/plugins/).
 
-## How does this Template Plugin work?
-
-The Template Plugin has two active rules and three rules that are commented
-out:
-
-Rule 9500010 in template-config.conf checks for the existence of the
-TX variable `template-plugin_enabled`. If the variable is not set,
-it is being created and set to 0.
-The rule is commented out. That means the plugin is enabled
-by default. Uncomment this rule to disable the plugin.
-This rule is mandatory for CRS plugins.
-
-Rule 9500020 in template-config.conf sets the TX variable `template-plugin_foobar`
-to 1. It is commented out. Uncomment it to set the variable.
-
-Rule 9500100 in template-config.conf checks for the request parameter
-template-plugin-test-parameter. If is present and not empty, then
-a rule alert is triggered and the anomaly score is raised with
-a severity CRITICAL score.
-
-Rule 9500099 in template-before.conf checks for the
-TX variable `template-plugin_enabled`. If the variable is existing and it is
-set to 0, then the subsequent rules of the plugin are removed for the
-current transaction. This effectively disables the plugin for the
-current transaction.
-This rule is mandatory for CRS plugins. When writing your own plugins,
-it is important to make sure the control statement in this rule removes
-the right rule range.
-
-Rule 9500100 in template-before.conf checks for the existence of the
-request parameter `template-plugin-test-parameter`. If the parameter exists
-and is non-empty, a critical alert is thrown.
-
-## How to adopt the Template Plugin to your needs?
-
-Feel free to take this template plugin and adopt it to your needs.
-
-The following steps are necessary to create a new plugin that
-follows the established standard for CRS plugins:
-
-* Make sure the control statement in 9500099 is correct.
-* Test your rule set throughly, namely the interaction with CRS.
-* Publish your plugin rule set
-
 ## Order of rules with plugins and existing CRS rules
 
 The rules run in the order described in the following sections.
