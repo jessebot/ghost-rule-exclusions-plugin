@@ -9,7 +9,7 @@ plugin:
   long_description: |
     Provides targeted rule exclusions to eliminate false positive when running
     OWASP CRS in front of Ghost, a federated blogging software.
-  type: "official"
+  type: "3rd-party"
   category: "rule-exclusion"
   status: "tested"
   license: "Apache-2.0"
