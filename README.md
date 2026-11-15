@@ -1,6 +1,6 @@
 # OWASP CRS - Ghost Exclusions Plugin
 
-This is a first attempt at creating an exclusions plugin for Ghost using the template repo provided by the official OWASP CSR team. This will likely be mirrored to codeberg.org and/or git.open.engineering as the author is rarely on GitHub these days.
+This is a first attempt at creating an exclusions plugin for Ghost using the template repo provided by the official OWASP CSR team. This will likely be mirrored to codeberg.org eventually but is also available at [git.open.engineering/oeng/ghost-exclusions-plugin](https://git.open.engineering/oeng/ghost-exclusions-plugin) as the author is rarely on GitHub these days.
 
 ![Integration tests](https://github.com/coreruleset/template-plugin/actions/workflows/integration.yml/badge.svg)
 
