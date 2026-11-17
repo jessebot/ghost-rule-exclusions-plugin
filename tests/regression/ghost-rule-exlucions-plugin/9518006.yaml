@@ -1,0 +1,23 @@
+---
+meta:
+  author: "Jesse Hitch"
+  description: "Ghost Rule Exclusions Plugin allowing editing image captions"
+rule_id: 9518006
+tests:
+  - test_id: 1
+    desc: Check if users can edit an image caption in a post
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: OWASP CRS
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+          port: 80
+          method: PUT
+          uri: /ghost/api/admin/posts/6afb70682570f00001ee493c/?formats=mobiledoc%2Clexical&save_revision=true&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Cpost_revisions%2Cpost_revisions.author
+          data: |
+            {"posts": [{"feature_image_caption": "<span style=\"white-space: pre-wrap;\">a picture of a cat superimposed over mountains at sunset with the large face of another cat as a transparently overlay in the background (3-wolf-moon style)</span> <span style=\"white-space: pre-wrap;\">the text reads: \"maybe im not overthinking, maybe im just regular thinking about stuff that's overhappening\"</span>"}]}
+        output:
+          log:
+            no_expect_ids: [941100, 941160]
