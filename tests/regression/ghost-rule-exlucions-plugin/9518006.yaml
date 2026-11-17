@@ -18,7 +18,7 @@ tests:
           method: PUT
           uri: /ghost/api/admin/posts/6afb70682570f00001ee493c/?formats=mobiledoc%2Clexical&save_revision=true&include=tags%2Cauthors%2Cauthors.roles%2Cemail%2Ctiers%2Cnewsletter%2Ccount.clicks%2Cpost_revisions%2Cpost_revisions.author
           data: |-
-            {"posts":[{"feature_image_caption": "<span style=\"white-space: pre-wrap;\">a picture of a cat superimposed over mountains at sunset with the large face of another cat as a transparently overlay in the background (3-wolf-moon style)</span> <span style=\"white-space: pre-wrap;\">the text reads: \"maybe im not overthinking, maybe im just regular thinking about stuff that's overhappening\"</span>"}]}
+            {"posts":{"0.feature_image_caption": "<span style=\"white-space: pre-wrap;\">a picture of a cat superimposed over mountains at sunset with the large face of another cat as a transparently overlay in the background (3-wolf-moon style)</span> <span style=\"white-space: pre-wrap;\">the text reads: \"maybe im not overthinking, maybe im just regular thinking about stuff that's overhappening\"</span>"}}
         output:
           log:
             no_expect_ids:
