@@ -18,7 +18,7 @@ tests:
           method: PUT
           uri: /ghost/api/admin/users/6afa0a8c2570f00001ee4934/?include=roles
           data: |-
-            {"users":[{"profile_image":"test"}]}
+            {"users":{"0.profile_image":"test"}}
         output:
           log:
             no_expect_ids:
