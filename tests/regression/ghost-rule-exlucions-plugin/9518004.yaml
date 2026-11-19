@@ -17,8 +17,8 @@ tests:
           port: 80
           method: GET
           uri: /.ghost/activitypub/inbox/index
-          data: |
-            text
+          data: |-
+            {"@context":["https://www.w3.org/ns/activitystreams","https://w3id.org/security/v1"],"id":"https://mastodon.example.tld/users/exampleUser#delete","type":"Delete","actor":"https://mastodon.example.tld/users/exampleUser","to":["https://www.w3.org/ns/activitystreams#Public"],"object":"https://mastodon.example.tld/users/exampleUser","signature":{"type":"RsaSignature2017","creator":"https://mastodon.example.tld/users/exampleUser#main-key","created":"2026-11-19T15:37:39Z","expires":"2026-11-21T15:37:39Z","signatureValue":"fTFHiDpOhFkxoV+9rftGPoyf7SE5/b0LqcWnQyV3zLkdtEaKL7089jKnGSGkREYw5hSmoHwq7ciPQkmoV52yFLL+BpHVYZe0uZmOs5yQThd5oNQMnoyaKoUqNn+T/YsgxsAlGOgDsngGBhDa4+ExcgC+znfMV0LXWIRbS5AeuUvhiXqAKzcHJq8DyJZFKO6lx6XcpgbWQRvvuILkdhAQgKc8E8LE+giJx/sbF+Cunw32lVKhxAFaqfU69yliy2jlNsh+KtwZ6nkqOXrQYvJqREEQ8PmET9/bEW3FIrq/55Wk+ta4crEBoWcllIfItwqpR++nJSD/Zie5977C6RvfNw=="}}
         output:
           log:
             no_expect_ids: [920420]
